@@ -1,0 +1,56 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row min-vh-100 align-items-center">
+        <div class="col-12 text-center">
+            <h1 class="display-4 mb-4">Welcome to TimeTable Management System</h1>
+            
+            <div class="row justify-content-center mt-5">
+                <!-- Student Card -->
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-lg h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-graduate fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title">Student</h3>
+                            <p class="card-text">Access your class timetables and schedules</p>
+                            <a href="{% url 'student_login' %}" class="btn btn-primary">Student Login</a>
+                            <div class="mt-2">
+                                <small>New student? <a href="{% url 'student_signup' %}">Sign up</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor Card -->
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-lg h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chalkboard-teacher fa-3x text-success mb-3"></i>
+                            <h3 class="card-title">Instructor</h3>
+                            <p class="card-text">Manage your teaching schedule and courses</p>
+                            <a href="{% url 'instructor_login' %}" class="btn btn-success">Instructor Login</a>
+                            <div class="mt-2">
+                                <small>New instructor? <a href="{% url 'instructor_signup' %}">Sign up</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Card -->
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-lg h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-shield fa-3x text-danger mb-3"></i>
+                            <h3 class="card-title">Admin</h3>
+                            <p class="card-text">Full system administration and management</p>
+                            <a href="{% url 'admin:login' %}" class="btn btn-danger">Admin Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

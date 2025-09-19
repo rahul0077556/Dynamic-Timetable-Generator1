@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="mb-4">Student Dashboard</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Welcome {{ request.user.get_full_name }}</h5>
+                    <p class="card-text">
+                        Registration Number: {{ request.user.student.registration_number }}<br>
+                        Programme: {{ request.user.student.programme }}<br>
+                        Year of Study: {{ request.user.student.year_of_study }}
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Timetable View -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Your Timetable</h5>
+                </div>
+                <div class="card-body">
+                    <!-- Add your existing timetable view here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
